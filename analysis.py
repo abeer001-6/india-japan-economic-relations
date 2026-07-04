@@ -55,6 +55,12 @@ trade_growth = (
 print(f"Total bilateral trade growth from FY{full_year_trade['financial_year'].iloc[0]} "
       f"to FY{full_year_trade['financial_year'].iloc[-1]}: {trade_growth:.1f}%")
 
+# Note: 'trade_balance' chart (below) drops rows missing EITHER exports or imports,
+# while 'total_trade_trend' only drops rows missing the total figure. This is why
+# total_trade_trend can show a year (e.g. FY2024-25) that trade_balance doesn't --
+# the source reported total trade for that year without an export/import breakdown.
+# This is flagged in the README rather than papered over.
+
 # ---------------------------------------------------------
 # 3. Chart 1: FDI inflows over time
 # ---------------------------------------------------------
@@ -93,14 +99,22 @@ plt.close()
 # ---------------------------------------------------------
 # 5. Chart 3: Total trade volume trend
 # ---------------------------------------------------------
+# NOTE: Switched from a line chart to a bar chart on purpose. The available years
+# have large gaps (e.g. FY2007-08 to FY2022-23), and a connected line visually
+# implies smooth, continuous growth across years with no actual data -- which
+# would misrepresent what we know. Bars make each year's figure stand alone
+# without implying anything about the missing years in between.
 total_trade_plot = trade.dropna(subset=["total_trade_usd_bn"])
 fig, ax = plt.subplots(figsize=(9, 5))
-ax.plot(total_trade_plot["financial_year"], total_trade_plot["total_trade_usd_bn"],
-        marker="o", color="#4C72B0", linewidth=2)
+bars = ax.bar(total_trade_plot["financial_year"], total_trade_plot["total_trade_usd_bn"],
+              color="#4C72B0")
 ax.set_title("India-Japan Total Bilateral Trade Volume", fontsize=13, weight="bold")
 ax.set_ylabel("Total Trade (USD Billion)")
 ax.set_xlabel("Financial Year")
-ax.grid(alpha=0.3)
+for bar, val in zip(bars, total_trade_plot["total_trade_usd_bn"]):
+    ax.text(bar.get_x() + bar.get_width() / 2, val + 0.3, f"${val}B",
+            ha="center", fontsize=9)
+ax.grid(alpha=0.3, axis="y")
 plt.tight_layout()
 plt.savefig(os.path.join(CHART_DIR, "total_trade_trend.png"), dpi=150)
 plt.close()
@@ -109,3 +123,4 @@ print(f"\nCharts saved to '{CHART_DIR}/' folder:")
 print("  - fdi_inflows.png")
 print("  - trade_balance.png")
 print("  - total_trade_trend.png")
+
