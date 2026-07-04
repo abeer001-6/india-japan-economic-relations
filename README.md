@@ -1,10 +1,10 @@
 # India-Japan Economic Relations: FDI & Trade Analysis
 
-A data analysis project examining Japanese Foreign Direct Investment (FDI) into India and India-Japan bilateral trade trends, using publicly available government and industry-body data.
+A data analysis project examining Japanese Foreign Direct Investment (FDI) into India and India-Japan bilateral trade trends, using publicly available government and industry body data.
 
 ## Motivation
 
-This project extends my earlier academic study on India-Japan business practices (Hofstede framework, Toyota Kirloskar / Maruti Suzuki / SoftBank-Paytm case studies) into a quantitative, data-driven analysis of the economic relationship between the two countries — built as part of my preparation for an MBA in Japan (Hitotsubashi ICS / UTokyo).
+This project extends my earlier academic study on India-Japan business practices (Hofstede framework, Toyota Kirloskar / Maruti Suzuki / SoftBank-Paytm case studies) into a quantitative, data driven analysis of the economic relationship between the two countries  built as part of my preparation for an MBA in Japan (Hitotsubashi ICS / UTokyo).
 
 ## What this project does
 
@@ -28,7 +28,7 @@ This project extends my earlier academic study on India-Japan business practices
 
 ## Data Sources
 
-All figures are drawn directly from primary/official or industry-standard sources — no estimated or invented numbers:
+All figures are drawn directly from primary/official or industry-standard sources,no estimated or invented numbers:
 
 - Ministry of External Affairs, Government of India — India-Japan Bilateral Relations brief
 - Indian Embassy, Tokyo — official India-Japan Commercial Relations page
@@ -38,7 +38,7 @@ All figures are drawn directly from primary/official or industry-standard source
 
 Full citations are included in the `source` column of each CSV file. Where a source only provided a partial-year figure or didn't disaggregate exports/imports, this is explicitly labeled in the data rather than estimated.
 
-**Note on cross-source figures:** Government (MEA/Embassy) and industry-body (IBEF) or press (Business Standard) sources occasionally report slightly different figures for the same year, due to differences in reporting currency, fiscal-year conventions, or when the estimate was taken. Where this occurs, the specific source is cited alongside the figure in the data file rather than reconciling them into a single "true" number.
+**Note on cross-source figures:** Government (MEA/Embassy) and industry body (IBEF) or press (Business Standard) sources occasionally report slightly different figures for the same year, due to differences in reporting currency, fiscal year conventions, or when the estimate was taken. Where this occurs, the specific source is cited alongside the figure in the data file rather than reconciling them into a single "true" number.
 
 ## Project Structure
 
@@ -74,13 +74,13 @@ This will print summary statistics to the console and regenerate all charts in t
 
 ## Limitations
 
-- Some years have partial-year or non-disaggregated figures depending on what was publicly reported at the time of writing (marked accordingly in the data files).
-- This is a snapshot analysis using published figures, not primary data collection — intended as a portfolio/academic exercise, not a research publication.
+- Some years have partial-year or non disaggregated figures depending on what was publicly reported at the time of writing (marked accordingly in the data files).
+- This is a snapshot analysis using published figures, not primary data collection intended as a portfolio/academic exercise, not a research publication.
 
 ## Author
 
-Abeer Upadhyay — BBA (Finance), Indian Institute of Technology Patna
+Abeer Upadhyay BBA (Finance), Indian Institute of Technology Patna
 
 ## License
 
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+This project is licensed under the MIT License see [LICENSE](LICENSE) for details.
